@@ -1,8 +1,10 @@
 package application_test
 
 import (
+	"github.com/alyssonvitor500/go-hexagonal/application"
+	"github.com/stretchr/testify/require"
 	"testing"
-	"github.com/alyssonvitor500/go-hexagonal"
+)
 
 func TestProduct_Enable(t *testing.T) {
 	product := application.Product{}
@@ -16,5 +18,5 @@ func TestProduct_Enable(t *testing.T) {
 	product.Price = 0
 
 	err = product.Enable()
-	require.Equal(t, "the price must be greater than zero", err.Error())
+	require.Equal(t, "the price must be greater than zero to enable the product", err.Error())
 }
