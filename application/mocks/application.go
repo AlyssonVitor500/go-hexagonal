@@ -2,6 +2,7 @@
 // Source: application/product.go
 
 // Package mock_application is a generated GoMock package.
+// Code => mockgen -destination=application/mocks/application.go -source=application/product.go application
 package mock_application
 
 import (
