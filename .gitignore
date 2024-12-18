@@ -26,3 +26,6 @@ go.work.sum
 
 # Default ignored files
 .idea
+
+# Sqlite3 file
+db.sqlite
