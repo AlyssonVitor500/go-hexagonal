@@ -13,12 +13,13 @@ func TestRun(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
-	// Defining mocks
+	// Defining params
 	productName := "Product Test"
 	productPrice := 25.99
 	productStatus := "enabled"
 	productId := "abc"
 
+	// Defining mocks
 	productMock := mock_application.NewMockProductInterface(ctrl)
 	productMock.EXPECT().GetID().Return(productId).AnyTimes()
 	productMock.EXPECT().GetName().Return(productName).AnyTimes()
@@ -51,7 +52,7 @@ func TestRun(t *testing.T) {
 
 	// Disabled entry test
 	expectedResult = fmt.Sprintf("Product ID %s has been disabled", productMock.GetID())
-	result, err = cli.Run(productServiceMock, "disabled", productId, "", 0)
+	result, err = cli.Run(productServiceMock, "disable", productId, "", 0)
 	require.Nil(t, err)
 	require.Equal(t, expectedResult, result)
 
