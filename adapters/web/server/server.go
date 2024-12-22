@@ -22,7 +22,7 @@ func MakeNewWebserver(service application.ProductServiceInterface) *Webserver {
 func (webserver *Webserver) Serve() {
 
 	r := mux.NewRouter() // Responsible for routes
-	n := negroni.New( // Middleware
+	n := negroni.New(    // Middleware
 		negroni.NewLogger(),
 	)
 

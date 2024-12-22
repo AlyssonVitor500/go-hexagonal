@@ -1,0 +1,5 @@
+>> touch db.sqlite
+>> sqlite3 db.sqlite
+
+-- run in sqlite3
+>> create table products ( "id" string, "name" string, "price" float, "status" string );
